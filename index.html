@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clon-Flix - Tu plataforma de streaming</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-text">CLON-FLIX</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Inicio</a>
+                <a href="#" class="nav-link">Series</a>
+                <a href="#" class="nav-link">Películas</a>
+                <a href="#" class="nav-link">Novedades</a>
+                <a href="#" class="nav-link">Mi lista</a>
+            </div>
+            <div class="search-user">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar películas...">
+                    <button id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-profile">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Usuario">
+                </div>
+            </div>
+            <button class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Stranger Things</h1>
+                <p class="hero-description">Cuando un niño desaparece, sus amigos, la familia y la policía se ven envueltos en una serie de eventos misteriosos al tratar de encontrarlo. Su ausencia coincide con el avistamiento de una criatura terrorífica y la aparición de una extraña niña.</p>
+                <div class="hero-buttons">
+                    <button class="play-button"><i class="fas fa-play"></i> Reproducir</button>
+                    <button class="info-button"><i class="fas fa-info-circle"></i> Más información</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2 class="section-title">Tendencias ahora</h2>
+            <div class="movie-row" id="trending-movies">
+                <!-- Películas se cargarán aquí con JavaScript -->
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2 class="section-title">Populares en Clon-Flix</h2>
+            <div class="movie-row" id="popular-movies">
+                <!-- Películas se cargarán aquí con JavaScript -->
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2 class="section-title">Mejor valoradas</h2>
+            <div class="movie-row" id="top-rated-movies">
+                <!-- Películas se cargarán aquí con JavaScript -->
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2 class="section-title">Próximos estrenos</h2>
+            <div class="movie-row" id="upcoming-movies">
+                <!-- Películas se cargarán aquí con JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Audio descriptivo</a>
+                <a href="#">Centro de ayuda</a>
+                <a href="#">Tarjetas de regalo</a>
+                <a href="#">Prensa</a>
+                <a href="#">Empleo</a>
+                <a href="#">Términos de uso</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Avisos legales</a>
+                <a href="#">Preferencias de cookies</a>
+                <a href="#">Información corporativa</a>
+                <a href="#">Contáctanos</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 - DESARROLLADO POR ERICK PROGRAMADOR</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de búsqueda -->
+    <div class="modal" id="search-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Buscar películas</h2>
+                <div class="search-box">
+                    <input type="text" id="modal-search-input" placeholder="Escribe el título de la película...">
+                    <button id="modal-search-button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="search-results" id="modal-search-results">
+                <!-- Resultados de búsqueda aparecerán aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de detalles de película -->
+    <div class="modal" id="movie-modal">
+        <div class="modal-content movie-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="movie-modal-poster">
+                <img id="modal-movie-poster" src="" alt="Poster de la película">
+            </div>
+            <div class="movie-modal-info">
+                <h2 id="modal-movie-title"></h2>
+                <div class="movie-meta">
+                    <span id="modal-movie-year"></span>
+                    <span id="modal-movie-rating"></span>
+                    <span id="modal-movie-runtime"></span>
+                </div>
+                <p id="modal-movie-overview"></p>
+                <div class="movie-genres" id="modal-movie-genres"></div>
+                <div class="movie-modal-buttons">
+                    <button class="play-button"><i class="fas fa-play"></i> Reproducir</button>
+                    <button class="add-to-list"><i class="fas fa-plus"></i> Mi lista</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="close-mobile-menu">&times;</span>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="#" class="mobile-nav-link active"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#" class="mobile-nav-link"><i class="fas fa-tv"></i> Series</a>
+            <a href="#" class="mobile-nav-link"><i class="fas fa-film"></i> Películas</a>
+            <a href="#" class="mobile-nav-link"><i class="fas fa-star"></i> Novedades</a>
+            <a href="#" class="mobile-nav-link"><i class="fas fa-bookmark"></i> Mi lista</a>
+            <div class="mobile-search">
+                <input type="text" placeholder="Buscar...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
